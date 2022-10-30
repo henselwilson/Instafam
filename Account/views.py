@@ -25,10 +25,9 @@ def register_view(request,*args,**kwargs):
     username = request.data['username']
     password = request.data['password']
     email = request.data['email']
-    
+
 
     user = User.objects.create_user(username, email, password)
-    acc = Account.objects.create(user=user)
     data={
         'user':user,
         'AccountType':'pub'
